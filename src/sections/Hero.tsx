@@ -20,27 +20,40 @@ export function Hero() {
         gsap.to(w, { rotation: 360, duration: 90, ease: 'none', repeat: -1 })
       }
 
-      // entrance: wordmark rises from the dark, watch settles
+      // entrance: wordmark rises from the dark, watch settles.
+      // Entrance animates the inner elements; the scroll parallax below animates
+      // their wrappers, so the two never fight over the same properties.
       const tl = gsap.timeline({ defaults: { ease: 'expo.out' } })
-      tl.from('.hero__wordmark', { yPercent: 18, opacity: 0, duration: reduced ? 0 : 1.6 }, 0)
-        .from('.hero__stage', { scale: 0.92, opacity: 0, duration: reduced ? 0 : 2 }, 0.1)
-        .from('.hero__line, .hero__cue', { opacity: 0, y: 8, duration: reduced ? 0 : 1, stagger: 0.1 }, 0.8)
+      tl.fromTo('.hero__wordmark-inner', { yPercent: 18, opacity: 0 }, { yPercent: 0, opacity: 1, duration: reduced ? 0 : 1.6 }, 0)
+        .fromTo('.hero__watch', { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: reduced ? 0 : 2 }, 0.1)
+        .fromTo('.hero__line, .hero__cue', { opacity: 0, y: 8 }, { opacity: 1, y: 0, duration: reduced ? 0 : 1, stagger: 0.1 }, 0.8)
 
       if (!reduced) {
-        // scroll parallax: the watch drifts up and dims as the next chapter arrives
-        gsap.to('.hero__stage', {
-          yPercent: -18,
-          scale: 0.9,
-          opacity: 0,
-          ease: 'none',
-          scrollTrigger: { trigger: root.current, start: 'top top', end: 'bottom top', scrub: true },
-        })
-        gsap.to('.hero__wordmark', {
-          yPercent: -40,
-          opacity: 0,
-          ease: 'none',
-          scrollTrigger: { trigger: root.current, start: 'top top', end: '70% top', scrub: true },
-        })
+        // scroll parallax: the watch drifts up and dims as the next chapter arrives,
+        // and comes straight back when the visitor scrolls up
+        gsap.fromTo(
+          '.hero__stage',
+          { yPercent: 0, scale: 1, opacity: 1 },
+          {
+            yPercent: -18,
+            scale: 0.9,
+            opacity: 0,
+            ease: 'none',
+            immediateRender: false,
+            scrollTrigger: { trigger: root.current, start: 'top top', end: 'bottom top', scrub: true },
+          },
+        )
+        gsap.fromTo(
+          '.hero__wordmark',
+          { yPercent: 0, opacity: 1 },
+          {
+            yPercent: -40,
+            opacity: 0,
+            ease: 'none',
+            immediateRender: false,
+            scrollTrigger: { trigger: root.current, start: 'top top', end: '70% top', scrub: true },
+          },
+        )
       }
     }, root)
     return () => {
@@ -51,7 +64,9 @@ export function Hero() {
 
   return (
     <section className="hero" id="top" ref={root}>
-      <h1 className="hero__wordmark serif">Meridian</h1>
+      <h1 className="hero__wordmark serif">
+        <span className="hero__wordmark-inner">Meridian</span>
+      </h1>
       <div className="hero__stage">
         <div className="hero__watch" ref={watch}>
           <Watch uid="hero" />

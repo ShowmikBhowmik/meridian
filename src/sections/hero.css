@@ -35,6 +35,11 @@
   text-wrap: none;
 }
 
+.hero__wordmark-inner {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
 .hero__stage {
   position: absolute;
   left: 50%;
