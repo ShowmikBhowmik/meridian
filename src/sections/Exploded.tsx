@@ -66,9 +66,11 @@ export function Exploded() {
               end: () => `+=${window.innerHeight * (desktop ? 4 : 3.2)}`,
               scrub: reduced ? false : 0.6,
               anticipatePin: 1,
-              onUpdate: desktop ? drawLeaders : updateCaption,
               onRefresh: desktop ? drawLeaders : undefined,
             },
+            // redraw from the timeline, not the scroll event: with a smoothed scrub the
+            // layers keep moving after the wheel stops, and the leaders must follow them
+            onUpdate: desktop ? drawLeaders : updateCaption,
           })
 
           // 0 → 0.25: tilt into perspective
@@ -138,8 +140,8 @@ export function Exploded() {
             })
           }
 
-          function updateCaption(self: ScrollTrigger) {
-            const p = self.progress
+          function updateCaption() {
+            const p = tl.progress()
             if (p < 0.2 || p > 0.74) {
               setCaption(null)
               return
