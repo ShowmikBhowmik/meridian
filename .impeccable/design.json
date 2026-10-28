@@ -1,0 +1,558 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-28T17:49:33+00:00",
+  "title": "Design System: Meridian",
+  "extensions": {
+    "colorMeta": {
+      "ground": {
+        "role": "neutral",
+        "displayName": "Graphite Night",
+        "canonical": "#0a0c10",
+        "tonalRamp": [
+          "oklch(15% 0.006 262)",
+          "oklch(25% 0.007 262)",
+          "oklch(35% 0.009 262)",
+          "oklch(47% 0.011 262)",
+          "oklch(60% 0.011 262)",
+          "oklch(72% 0.009 262)",
+          "oklch(84% 0.008 262)",
+          "oklch(95% 0.006 262)"
+        ]
+      },
+      "ground-2": {
+        "role": "neutral",
+        "displayName": "Graphite Night 2",
+        "canonical": "#0e1116",
+        "tonalRamp": [
+          "oklch(15% 0.006 262)",
+          "oklch(25% 0.007 262)",
+          "oklch(35% 0.009 262)",
+          "oklch(47% 0.011 262)",
+          "oklch(60% 0.011 262)",
+          "oklch(72% 0.009 262)",
+          "oklch(84% 0.008 262)",
+          "oklch(95% 0.006 262)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Raised Surface",
+        "canonical": "#121519",
+        "tonalRamp": [
+          "oklch(15% 0.006 255)",
+          "oklch(25% 0.007 255)",
+          "oklch(35% 0.009 255)",
+          "oklch(47% 0.011 255)",
+          "oklch(60% 0.011 255)",
+          "oklch(72% 0.009 255)",
+          "oklch(84% 0.008 255)",
+          "oklch(95% 0.006 255)"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral",
+        "displayName": "Raised Surface 2",
+        "canonical": "#181c22",
+        "tonalRamp": [
+          "oklch(15% 0.007 255)",
+          "oklch(25% 0.009 255)",
+          "oklch(35% 0.010 255)",
+          "oklch(47% 0.013 255)",
+          "oklch(60% 0.013 255)",
+          "oklch(72% 0.011 255)",
+          "oklch(84% 0.009 255)",
+          "oklch(95% 0.007 255)"
+        ]
+      },
+      "bone": {
+        "role": "neutral",
+        "displayName": "Bone",
+        "canonical": "#ede6da",
+        "tonalRamp": [
+          "oklch(15% 0.015 82)",
+          "oklch(25% 0.019 82)",
+          "oklch(35% 0.022 82)",
+          "oklch(47% 0.027 82)",
+          "oklch(60% 0.028 82)",
+          "oklch(72% 0.024 82)",
+          "oklch(84% 0.019 82)",
+          "oklch(95% 0.015 82)"
+        ]
+      },
+      "bone-2": {
+        "role": "neutral",
+        "displayName": "Bone 2",
+        "canonical": "#b9b2a5",
+        "tonalRamp": [
+          "oklch(15% 0.012 82)",
+          "oklch(25% 0.015 82)",
+          "oklch(35% 0.019 82)",
+          "oklch(47% 0.022 82)",
+          "oklch(60% 0.023 82)",
+          "oklch(72% 0.020 82)",
+          "oklch(84% 0.016 82)",
+          "oklch(95% 0.012 82)"
+        ]
+      },
+      "bone-3": {
+        "role": "neutral",
+        "displayName": "Bone 3",
+        "canonical": "#8a847a",
+        "tonalRamp": [
+          "oklch(15% 0.010 82)",
+          "oklch(25% 0.012 82)",
+          "oklch(35% 0.015 82)",
+          "oklch(47% 0.018 82)",
+          "oklch(60% 0.019 82)",
+          "oklch(72% 0.016 82)",
+          "oklch(84% 0.013 82)",
+          "oklch(95% 0.010 82)"
+        ]
+      },
+      "rule": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(237, 230, 218, 0.14)",
+        "tonalRamp": [
+          "oklch(15% 0.015 82)",
+          "oklch(25% 0.019 82)",
+          "oklch(35% 0.022 82)",
+          "oklch(47% 0.027 82)",
+          "oklch(60% 0.028 82)",
+          "oklch(72% 0.024 82)",
+          "oklch(84% 0.019 82)",
+          "oklch(95% 0.015 82)"
+        ]
+      },
+      "rule-soft": {
+        "role": "neutral",
+        "displayName": "Hairline Soft",
+        "canonical": "rgba(237, 230, 218, 0.08)",
+        "tonalRamp": [
+          "oklch(15% 0.015 82)",
+          "oklch(25% 0.019 82)",
+          "oklch(35% 0.022 82)",
+          "oklch(47% 0.027 82)",
+          "oklch(60% 0.028 82)",
+          "oklch(72% 0.024 82)",
+          "oklch(84% 0.019 82)",
+          "oklch(95% 0.015 82)"
+        ]
+      },
+      "lume": {
+        "role": "primary",
+        "displayName": "Lume Phosphor",
+        "canonical": "#cff2b0",
+        "tonalRamp": [
+          "oklch(15% 0.054 128)",
+          "oklch(25% 0.068 128)",
+          "oklch(35% 0.082 128)",
+          "oklch(47% 0.099 128)",
+          "oklch(60% 0.103 128)",
+          "oklch(72% 0.086 128)",
+          "oklch(84% 0.069 128)",
+          "oklch(95% 0.054 128)"
+        ]
+      },
+      "lume-bright": {
+        "role": "primary",
+        "displayName": "Lume Bright",
+        "canonical": "#dcf8c4",
+        "tonalRamp": [
+          "oklch(15% 0.049 128)",
+          "oklch(25% 0.062 128)",
+          "oklch(35% 0.075 128)",
+          "oklch(47% 0.090 128)",
+          "oklch(60% 0.094 128)",
+          "oklch(72% 0.078 128)",
+          "oklch(84% 0.063 128)",
+          "oklch(95% 0.049 128)"
+        ]
+      },
+      "lume-dim": {
+        "role": "primary",
+        "displayName": "Lume Dim",
+        "canonical": "rgba(207, 242, 176, 0.45)",
+        "tonalRamp": [
+          "oklch(15% 0.054 128)",
+          "oklch(25% 0.068 128)",
+          "oklch(35% 0.082 128)",
+          "oklch(47% 0.099 128)",
+          "oklch(60% 0.103 128)",
+          "oklch(72% 0.086 128)",
+          "oklch(84% 0.069 128)",
+          "oklch(95% 0.054 128)"
+        ]
+      },
+      "lume-glow": {
+        "role": "primary",
+        "displayName": "Lume Glow",
+        "canonical": "rgba(207, 242, 176, 0.22)",
+        "tonalRamp": [
+          "oklch(15% 0.054 128)",
+          "oklch(25% 0.068 128)",
+          "oklch(35% 0.082 128)",
+          "oklch(47% 0.099 128)",
+          "oklch(60% 0.103 128)",
+          "oklch(72% 0.086 128)",
+          "oklch(84% 0.069 128)",
+          "oklch(95% 0.054 128)"
+        ]
+      },
+      "steel-light": {
+        "role": "tertiary",
+        "displayName": "Brushed Titanium, light stop",
+        "canonical": "#dfe1e3",
+        "tonalRamp": [
+          "oklch(15% 0.004 250)",
+          "oklch(25% 0.005 250)",
+          "oklch(35% 0.006 250)",
+          "oklch(47% 0.007 250)",
+          "oklch(60% 0.007 250)",
+          "oklch(72% 0.006 250)",
+          "oklch(84% 0.005 250)",
+          "oklch(95% 0.004 250)"
+        ]
+      },
+      "steel": {
+        "role": "tertiary",
+        "displayName": "Brushed Titanium",
+        "canonical": "#8d9096",
+        "tonalRamp": [
+          "oklch(15% 0.004 250)",
+          "oklch(25% 0.005 250)",
+          "oklch(35% 0.006 250)",
+          "oklch(47% 0.007 250)",
+          "oklch(60% 0.007 250)",
+          "oklch(72% 0.006 250)",
+          "oklch(84% 0.005 250)",
+          "oklch(95% 0.004 250)"
+        ]
+      },
+      "steel-dark": {
+        "role": "tertiary",
+        "displayName": "Brushed Titanium, dark stop",
+        "canonical": "#2d3137",
+        "tonalRamp": [
+          "oklch(15% 0.005 250)",
+          "oklch(25% 0.006 250)",
+          "oklch(35% 0.007 250)",
+          "oklch(47% 0.009 250)",
+          "oklch(60% 0.009 250)",
+          "oklch(72% 0.008 250)",
+          "oklch(84% 0.006 250)",
+          "oklch(95% 0.005 250)"
+        ]
+      },
+      "blued-steel": {
+        "role": "tertiary",
+        "displayName": "Blued Steel",
+        "canonical": "#2b3f8f",
+        "tonalRamp": [
+          "oklch(15% 0.079 268)",
+          "oklch(25% 0.099 268)",
+          "oklch(35% 0.119 268)",
+          "oklch(47% 0.144 268)",
+          "oklch(60% 0.150 268)",
+          "oklch(72% 0.125 268)",
+          "oklch(84% 0.101 268)",
+          "oklch(95% 0.079 268)"
+        ]
+      },
+      "grey-gold": {
+        "role": "tertiary",
+        "displayName": "Grey Gold",
+        "canonical": "#caa15c",
+        "tonalRamp": [
+          "oklch(15% 0.059 80)",
+          "oklch(25% 0.074 80)",
+          "oklch(35% 0.089 80)",
+          "oklch(47% 0.108 80)",
+          "oklch(60% 0.112 80)",
+          "oklch(72% 0.094 80)",
+          "oklch(84% 0.076 80)",
+          "oklch(95% 0.059 80)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The hero wordmark only; spans the viewport width, watch overlaps its lower half."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Chapter headings. Footer invitation runs larger (clamp(2.75rem, 6.5vw, 6.5rem), -0.03em); exploded heading smaller (clamp(2rem, 3.6vw, 3.5rem), lh 1). 2.75rem on phones."
+      },
+      "figure": {
+        "displayName": "Figure",
+        "purpose": "Counted specification values with a lume unit beside them. 3.25rem left-aligned on phones."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Collection piece names and material tile names (clamp(1.25rem, 1.8vw, 1.75rem) in tiles)."
+      },
+      "part-name": {
+        "displayName": "Part Name",
+        "purpose": "Exploded-view labels, nav wordmark (1.375rem), footer wordmark (1.5rem), button text."
+      },
+      "aside": {
+        "displayName": "Aside",
+        "purpose": "Italic one-line closers and the subhead beside Materials, in bone-2 or bone-3."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs under headlines, max 40 to 42ch, always bone-2."
+      },
+      "body-small": {
+        "displayName": "Body Small",
+        "purpose": "Spec notes, piece descriptions, material captions; max 40 to 48ch."
+      },
+      "nav": {
+        "displayName": "Nav",
+        "purpose": "Uppercase nav links and CTA; the hero calibre line uses the same size at 0.06em without uppercase."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase definition terms (spec dt), the scroll cue and rail hint (lume, 0.12em). Never an eyebrow above a headline."
+      },
+      "reference": {
+        "displayName": "Reference",
+        "purpose": "Uppercase piece references (bone-3) and footer links (bone-2); legal line same size untracked."
+      }
+    },
+    "shadows": [
+      {
+        "name": "watch-drop",
+        "value": "drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7))",
+        "purpose": "Filter under the hero watch SVG."
+      },
+      {
+        "name": "watch-drop-piece",
+        "value": "drop-shadow(0 24px 40px rgba(0, 0, 0, 0.65))",
+        "purpose": "Filter under each collection piece."
+      },
+      {
+        "name": "lume-halo",
+        "value": "0 24px 60px -10px rgba(207, 242, 176, 0.28)",
+        "purpose": "Resting glow under the circular button."
+      },
+      {
+        "name": "lume-halo-hover",
+        "value": "0 30px 80px -10px rgba(207, 242, 176, 0.4)",
+        "purpose": "Button hover glow."
+      },
+      {
+        "name": "lamp-glow",
+        "value": "0 0 24px 6px rgba(207, 242, 176, 0.22)",
+        "purpose": "The 10px cursor lamp in Materials."
+      },
+      {
+        "name": "floor-glow",
+        "value": "radial-gradient(ellipse at center, rgba(207, 242, 176, 0.09), transparent 60%)",
+        "purpose": "90vw x 60vh ellipse under the footer."
+      },
+      {
+        "name": "focus-ring",
+        "value": "outline: 1.5px solid #cff2b0; outline-offset: 4px; border-radius: 2px",
+        "purpose": "Global :focus-visible treatment; the only outline in the system."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "CSS transitions: colour 0.3s, underline 0.45s, button/caption 0.5s, nav 0.6s, photo filter 0.8s."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "The 2.4s looping scroll-cue drop."
+      },
+      {
+        "name": "gsap-entrance",
+        "value": "expo.out",
+        "purpose": "One-time entrances: hero wordmark 1.6s, stage 2s, lines 1s; spec count-up 1.8s + 0.1s per row; spec row rise 1.1s. Never repeated."
+      },
+      {
+        "name": "gsap-scrub",
+        "value": "ease: none, scrub 0.6 (exploded) / 0.8 (collection) / true (hero parallax)",
+        "purpose": "All chapter choreography is bound to scroll position."
+      },
+      {
+        "name": "gsap-follow",
+        "value": "power3.out, quickTo 0.5s (lamp) / 0.6s (magnet)",
+        "purpose": "Pointer-following elements."
+      },
+      {
+        "name": "gsap-release",
+        "value": "elastic.out(1, 0.45), 1.1s",
+        "purpose": "Magnetic button springing back on pointer leave."
+      },
+      {
+        "name": "mechanism-rotation",
+        "value": "360deg per 90s, linear, infinite",
+        "purpose": "Hero watch rotation."
+      },
+      {
+        "name": "mechanism-sweep",
+        "value": "360deg per 60s, linear, infinite",
+        "purpose": "Seconds hand on live watches."
+      },
+      {
+        "name": "mechanism-balance",
+        "value": "-24deg to 24deg, 0.36s ease-in-out alternate",
+        "purpose": "Balance wheel on live watches."
+      },
+      {
+        "name": "lamp-auto",
+        "value": "22s loop, ease none",
+        "purpose": "Materials lamp on touch devices."
+      },
+      {
+        "name": "lenis",
+        "value": "duration 1.15, easing 1.001 - 2^(-10t); scrollTo 1.4s",
+        "purpose": "Smooth scroll and anchor navigation; disabled under reduced motion."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation-duration 0.001ms; transition-duration 0.001ms; scrub false; counts set instantly",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "desktop",
+        "value": "900px",
+        "note": "Phone sheet is max-width: 899px. BREAKPOINT_DESKTOP = 900 in src/lib/motion.ts."
+      }
+    ],
+    "provenance": {
+      "rasterCredits": "public/img/CREDITS.md",
+      "watchSource": "src/components/Watch.tsx",
+      "tokenSource": "src/styles/global.css"
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button (magnetic disc)",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single call to action: a lume disc with serif text that glows and follows the pointer.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\"><span class=\"ds-btn-primary__text\">Request a private viewing</span></a>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; width: 220px; height: 220px; border-radius: 50%; background: var(--lume, #cff2b0); color: var(--ground, #0a0c10); text-align: center; font-family: var(--serif, 'Bodoni Moda', Didot, Georgia, serif); font-weight: 400; font-size: 1.25rem; font-variation-settings: 'opsz' 24; letter-spacing: -0.005em; line-height: 1.2; padding: 24px; text-decoration: none; box-shadow: 0 24px 60px -10px rgba(207, 242, 176, 0.28); transition: box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s cubic-bezier(0.16, 1, 0.3, 1); } .ds-btn-primary:hover { background: #dcf8c4; box-shadow: 0 30px 80px -10px rgba(207, 242, 176, 0.4); } .ds-btn-primary:focus-visible { outline: 1.5px solid var(--lume, #cff2b0); outline-offset: 4px; } .ds-btn-primary__text { display: block; max-width: 11ch; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Fixed hairline bar: serif wordmark, uppercase chapter links, lume CTA. Underline scales in from the left on hover.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav__mark\" href=\"#\">Meridian</a><nav class=\"ds-nav__links\"><a href=\"#\">Anatomy</a><a href=\"#\">Collection</a><a href=\"#\">Calibre</a><a href=\"#\">Materials</a></nav><a class=\"ds-nav__cta\" href=\"#\">Private viewing</a></header>",
+      "css": ".ds-nav { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 18px 32px; background: var(--ground, #0a0c10); color: var(--bone, #ede6da); } .ds-nav__mark { font-family: var(--serif, 'Bodoni Moda', Didot, Georgia, serif); font-weight: 400; font-size: 1.375rem; letter-spacing: 0.01em; font-variation-settings: 'opsz' 24; color: inherit; text-decoration: none; } .ds-nav__links { display: flex; gap: 32px; } .ds-nav__links a, .ds-nav__cta { position: relative; padding: 6px 0; font-family: var(--grotesk, 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif); font-size: 0.8125rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bone-2, #b9b2a5); text-decoration: none; transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav__cta { justify-self: end; color: var(--lume, #cff2b0); } .ds-nav__links a::after, .ds-nav__cta::after { content: ''; position: absolute; left: 0; right: 0; bottom: 2px; height: 1px; background: currentColor; transform: scaleX(0); transform-origin: right; transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1); } .ds-nav__links a:hover, .ds-nav__cta:hover { color: var(--bone, #ede6da); } .ds-nav__links a:hover::after, .ds-nav__cta:hover::after { transform: scaleX(1); transform-origin: left; } .ds-nav a:focus-visible { outline: 1.5px solid var(--lume, #cff2b0); outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Spec Row",
+      "kind": "custom",
+      "refersTo": "spec-row",
+      "description": "Calibre-sheet row: uppercase term and note on the left, tabular serif figure with lume unit on the right, hairline below.",
+      "html": "<dl class=\"ds-specs\"><div class=\"ds-spec\"><dt class=\"ds-spec__label\">Power reserve</dt><dd class=\"ds-spec__figure\"><span class=\"ds-spec__value\">72</span><span class=\"ds-spec__unit\">h</span></dd><dd class=\"ds-spec__note\">A single barrel, long mainspring, slow unwinding.</dd></div></dl>",
+      "css": ".ds-specs { margin: 0; border-top: 1px solid var(--rule, rgba(237, 230, 218, 0.14)); background: var(--ground, #0a0c10); color: var(--bone, #ede6da); font-family: var(--grotesk, 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif); } .ds-spec { display: grid; grid-template-columns: minmax(0, 1fr) auto; grid-template-rows: auto auto; column-gap: 32px; row-gap: 6px; padding: 28px 0; border-bottom: 1px solid var(--rule, rgba(237, 230, 218, 0.14)); align-items: baseline; } .ds-spec__label { grid-column: 1; grid-row: 1; font-size: 0.6875rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bone-2, #b9b2a5); font-weight: 500; } .ds-spec__figure { grid-column: 2; grid-row: 1 / span 2; margin: 0; display: flex; align-items: baseline; gap: 8px; justify-self: end; white-space: nowrap; } .ds-spec__value { font-family: var(--serif, 'Bodoni Moda', Didot, Georgia, serif); font-weight: 400; font-size: 4rem; line-height: 0.9; letter-spacing: -0.03em; font-variant-numeric: lining-nums tabular-nums; font-variation-settings: 'opsz' 96; } .ds-spec__unit { font-size: 0.875rem; letter-spacing: 0.08em; color: var(--lume, #cff2b0); text-transform: uppercase; } .ds-spec__note { grid-column: 1; grid-row: 2; margin: 0; color: var(--bone-3, #8a847a); font-size: 0.9375rem; line-height: 1.5; max-width: 44ch; }"
+    },
+    {
+      "name": "Material Tile",
+      "kind": "card",
+      "refersTo": "material-tile",
+      "description": "Flat dark tile with a greyscale photograph; title and caption anchored to the bottom over a graphite scrim, lit on hover.",
+      "html": "<article class=\"ds-material\"><div class=\"ds-material__photo\"></div><div class=\"ds-material__copy\"><p>Bevelled bridges, polished screw heads, Côtes de Genève laid by hand.</p><h3>Calibre M-01</h3></div></article>",
+      "css": ".ds-material { position: relative; overflow: hidden; width: 420px; height: 260px; background: var(--surface, #121519); border-radius: 2px; color: var(--bone, #ede6da); } .ds-material__photo { position: absolute; inset: 0; background: linear-gradient(135deg, #2a2d33, #0e1116); filter: grayscale(1) brightness(0.9); transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1); } .ds-material__copy { position: absolute; inset: auto 0 0 0; padding: 48px 22px 18px; display: flex; flex-direction: column; gap: 10px; z-index: 2; } .ds-material__copy::before { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(10, 12, 16, 0.94), rgba(10, 12, 16, 0)); opacity: 0; transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1); z-index: -1; } .ds-material__copy h3 { margin: 0; font-family: var(--serif, 'Bodoni Moda', Didot, Georgia, serif); font-weight: 400; font-size: 1.5rem; letter-spacing: -0.01em; font-variation-settings: 'opsz' 48; color: var(--bone-2, #b9b2a5); transition: color 0.5s cubic-bezier(0.16, 1, 0.3, 1); } .ds-material__copy p { margin: 0; font-family: var(--grotesk, 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif); color: var(--bone-2, #b9b2a5); font-size: 0.9375rem; line-height: 1.5; max-width: 48ch; opacity: 0; transform: translateY(6px); transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); } .ds-material:hover h3 { color: var(--bone, #ede6da); } .ds-material:hover .ds-material__copy::before, .ds-material:hover .ds-material__copy p { opacity: 1; transform: none; }"
+    },
+    {
+      "name": "Part Label with Leader",
+      "kind": "custom",
+      "refersTo": "part-label",
+      "description": "Exploded-view annotation: a lume node at the part, a 1px dim-lume leader, serif part name over a grotesk spec.",
+      "html": "<div class=\"ds-part\"><svg class=\"ds-part__leader\" width=\"120\" height=\"24\" viewBox=\"0 0 120 24\" aria-hidden=\"true\"><path d=\"M4 20 L60 8 H118\"/><circle cx=\"4\" cy=\"20\" r=\"3\"/></svg><div class=\"ds-part__label\"><span class=\"ds-part__name\">Hands</span><span class=\"ds-part__spec\">Thermally blued steel, lume-filled</span></div></div>",
+      "css": ".ds-part { display: flex; align-items: flex-start; gap: 0; background: var(--ground, #0a0c10); padding: 16px; } .ds-part__leader path { fill: none; stroke: var(--lume-dim, rgba(207, 242, 176, 0.45)); stroke-width: 1; } .ds-part__leader circle { fill: var(--lume, #cff2b0); } .ds-part__label { display: flex; flex-direction: column; gap: 1px; padding-left: 18px; white-space: nowrap; margin-top: -4px; } .ds-part__name { font-family: var(--serif, 'Bodoni Moda', Didot, Georgia, serif); font-weight: 400; font-size: 1.125rem; line-height: 1.15; letter-spacing: 0.005em; color: var(--bone, #ede6da); font-variation-settings: 'opsz' 24; } .ds-part__spec { font-family: var(--grotesk, 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif); font-size: 0.71rem; line-height: 1.3; letter-spacing: 0.06em; color: var(--bone-2, #b9b2a5); }"
+    },
+    {
+      "name": "Scroll Cue",
+      "kind": "custom",
+      "refersTo": "nav-cta",
+      "description": "Uppercase lume label with a 1px vertical gradient line and a looping drop; the hero's primary action is the scroll.",
+      "html": "<a class=\"ds-cue\" href=\"#\">Scroll to disassemble<span class=\"ds-cue__line\" aria-hidden=\"true\"></span></a>",
+      "css": ".ds-cue { display: inline-flex; align-items: center; gap: 14px; padding: 16px; background: var(--ground, #0a0c10); color: var(--lume, #cff2b0); font-family: var(--grotesk, 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif); font-size: 0.6875rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; } .ds-cue__line { width: 1px; height: 56px; background: linear-gradient(to bottom, var(--lume, #cff2b0), transparent); position: relative; overflow: hidden; } .ds-cue__line::after { content: ''; position: absolute; left: 0; top: -100%; width: 100%; height: 100%; background: linear-gradient(to bottom, transparent, var(--ground, #0a0c10)); animation: ds-cue-drop 2.4s cubic-bezier(0.65, 0, 0.35, 1) infinite; } @keyframes ds-cue-drop { from { transform: translateY(0); } to { transform: translateY(200%); } } .ds-cue:focus-visible { outline: 1.5px solid var(--lume, #cff2b0); outline-offset: 4px; border-radius: 2px; }"
+    },
+    {
+      "name": "Collection Piece Meta",
+      "kind": "card",
+      "refersTo": "spec-row",
+      "description": "The caption block under each collection watch: hairline, serif name beside an uppercase reference, one-line description.",
+      "html": "<div class=\"ds-piece\"><h3 class=\"ds-piece__name\">Oxblood</h3><span class=\"ds-piece__ref\">M-01 · 40 mm</span><p class=\"ds-piece__line\">Eleven coats of translucent red over black. Deep at noon, near black at dusk.</p></div>",
+      "css": ".ds-piece { display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: 16px; row-gap: 8px; align-items: baseline; border-top: 1px solid var(--rule, rgba(237, 230, 218, 0.14)); padding-top: 16px; width: 400px; background: var(--ground, #0a0c10); color: var(--bone, #ede6da); font-family: var(--grotesk, 'Hanken Grotesk', 'Helvetica Neue', Arial, sans-serif); } .ds-piece__name { margin: 0; font-family: var(--serif, 'Bodoni Moda', Didot, Georgia, serif); font-weight: 400; font-size: 1.75rem; letter-spacing: -0.01em; font-variation-settings: 'opsz' 48; } .ds-piece__ref { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bone-3, #8a847a); } .ds-piece__line { grid-column: 1 / -1; margin: 0; color: var(--bone-2, #b9b2a5); font-size: 0.9375rem; line-height: 1.55; max-width: 40ch; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Manufacture's Drawing",
+    "overview": "**Creative North Star: \"The Manufacture's Drawing\"**\n\nMeridian is one object seen in the dark. The page is a graphite-night ground on which a single watch, drawn entirely in layered SVG, is turned, taken apart, annotated and reassembled. Everything else on the page behaves like the engineering drawing around that object: hairline rules, pinned part labels with leader lines ending in a dot, tabular numerals that count themselves up, and a display Didone that reads like engraving rather than advertising. Density is low on purpose; chapters begin with roughly a viewport of air and nothing competes with the watch for light.\n\nLight is rationed. Warm bone type on near-black carries almost every word; the one accent, lume phosphor, is spent only where a watch would actually glow: index plots and hand tips, leader-line nodes, unit abbreviations beside the live figures, the scroll cue, the nav's \"Private viewing\" link, and the single circular button at the end. Metals (brushed titanium, grey gold, blued steel) exist only inside the SVG watch and never leak into the UI chrome. The build confirms the direction contract's refusals: no split hero with copy beside product, no row of equal feature cards, no second accent.",
+    "keyCharacteristics": [
+      "Graphite ground, warm bone type, one phosphor accent; metals live only in the drawn watch.",
+      "Bodoni Moda at optical size 96 for display, 48 for titles, 24 for labels; Hanken Grotesk with tabular numerals for everything that must be read.",
+      "1px hairline rules at 14% bone are the only structural lines; there are no boxes or borders around content.",
+      "Depth is ambient (soft drop shadows under the watch, a phosphor halo under the button); no hard or offset shadows anywhere.",
+      "Motion is scrub-bound to the scroll or runs as slow continuous mechanism; entrances use expo.out once and never repeat."
+    ],
+    "rules": [
+      {
+        "name": "The Lume Budget Rule",
+        "body": "Phosphor appears where a watch would glow and nowhere else: plots, tips, nodes, units, one cue, one CTA link, one button. If a new surface wants a second lume element in the same viewport, one of them is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Metals Stay in the Case Rule",
+        "body": "Titanium, gold and blued-steel values exist only inside `Watch.tsx` gradients. UI chrome is graphite, bone and lume only.",
+        "section": "colors"
+      },
+      {
+        "name": "The Fade-to-Ground Rule",
+        "body": "Content never ends with a hard edge against the page; it fades into Graphite Night via a vertical gradient (hero floor 28vh, nav scrim, material captions).",
+        "section": "colors"
+      },
+      {
+        "name": "The Optical Size Rule",
+        "body": "Every serif setting declares `font-variation-settings: 'opsz'` (96 / 48 / 24). Never let the serif render at its default optical size; the hairlines only work when the size is told.",
+        "section": "typography"
+      },
+      {
+        "name": "The Tabular Rule",
+        "body": "Numbers are always tabular (`tnum` on body, `tabular-nums` on figures) so counted values and references do not shift width.",
+        "section": "typography"
+      },
+      {
+        "name": "The Labels Describe Rule",
+        "body": "Uppercase tracked labels exist only as definition terms, references, nav and cues. No headline carries an eyebrow or kicker above it; the build has none.",
+        "section": "typography"
+      },
+      {
+        "name": "The Light Not Edge Rule",
+        "body": "Elevation comes from light (glow, drop shadow, fade) never from edges (borders, outlines, hard offsets). The only outline is the 1.5px lume focus ring at 4px offset.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** set every serif with an explicit optical size (96 display and headlines, 48 titles and asides, 24 labels, wordmarks and button) and weight 400 only.",
+      "**Do** keep the one accent to where a watch glows: plots, tips, nodes, units, one cue, one CTA link, one button.",
+      "**Do** divide with 1px hairlines at 14% bone (`{colors.rule}`) and fade content into the ground with a graphite gradient rather than ending it on an edge.",
+      "**Do** bind chapter motion to the scroll (`scrub`, `ease: none`) and reserve `expo.out` for a single entrance per element; continuous motion is slow mechanism only (90s rotation, 60s sweep).",
+      "**Do** give the watch its 400/600 aspect box and a soft black drop shadow; keep the SVG crisp and never stretch or rasterise it.",
+      "**Do** provide the phone fallback that ships: one column, native snap rail, live caption instead of leader lines, automatic lamp instead of pointer tracking, and zero-duration animation under reduced motion."
+    ],
+    "donts": [
+      "**Don't** introduce a second accent, a coloured UI surface, or use the watch's titanium, gold or blued-steel values outside `Watch.tsx`.",
+      "**Don't** add borders, outlines, card edges, or hard or offset shadows; elevation is light (glow, drop shadow, fade) or real perspective.",
+      "**Don't** put an eyebrow or kicker above a headline; uppercase tracked text is for definition terms, references, nav and cues only.",
+      "**Don't** repeat section entrances on re-scroll, or animate anything on a loop faster than the balance wheel except the 2.4s scroll cue.",
+      "**Don't** use a max-width container or equal-width card rows; chapters are asymmetric grids led by the object, inside the fluid gutter.",
+      "**Don't** build the hero as copy-left, product-right; the wordmark spans the width and the watch overlaps it."
+    ]
+  }
+}
