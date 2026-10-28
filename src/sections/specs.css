@@ -1,0 +1,123 @@
+.specs {
+  padding: clamp(96px, 14vh, 180px) var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: clamp(40px, 6vw, 120px);
+  align-items: start;
+}
+
+.specs__head {
+  position: sticky;
+  top: 18vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.specs__head h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  line-height: 0.95;
+  letter-spacing: -0.025em;
+}
+
+.specs__head p {
+  color: var(--bone-2);
+  max-width: 40ch;
+  line-height: 1.6;
+}
+
+.specs__list {
+  margin: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.spec {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  column-gap: 32px;
+  row-gap: 6px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--rule);
+  align-items: baseline;
+}
+
+.spec__label {
+  grid-column: 1;
+  grid-row: 1;
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--bone-2);
+  font-weight: 500;
+}
+
+.spec__figure {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  justify-self: end;
+  white-space: nowrap;
+}
+
+.spec__value {
+  font-size: clamp(3rem, 5.5vw, 5.25rem);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  font-variant-numeric: lining-nums tabular-nums;
+  color: var(--bone);
+  min-width: 2.2ch;
+  text-align: right;
+}
+
+.spec__unit {
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  color: var(--lume);
+  text-transform: uppercase;
+}
+
+.spec__note {
+  grid-column: 1;
+  grid-row: 2;
+  margin: 0;
+  color: var(--bone-3);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  max-width: 44ch;
+}
+
+@media (max-width: 899px) {
+  .specs {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+  .specs__head {
+    position: static;
+  }
+  .specs__head h2 {
+    font-size: 2.75rem;
+  }
+  .spec {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 22px 0;
+  }
+  .spec__figure {
+    grid-column: 1;
+    grid-row: 2;
+    justify-self: start;
+  }
+  .spec__value {
+    font-size: 3.25rem;
+    text-align: left;
+  }
+  .spec__note {
+    grid-row: 3;
+  }
+}

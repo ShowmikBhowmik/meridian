@@ -1,0 +1,55 @@
+.watch {
+  position: relative;
+  aspect-ratio: 400 / 600;
+  width: 100%;
+  transform-style: preserve-3d;
+}
+
+.watch__layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform;
+}
+
+.watch__seconds,
+.watch__balance {
+  transform-box: view-box;
+}
+
+.watch--live .watch__seconds {
+  animation: watch-sweep 60s linear infinite;
+}
+
+.watch--live .watch__balance {
+  animation: watch-balance 0.36s ease-in-out infinite alternate;
+}
+
+@keyframes watch-sweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes watch-balance {
+  from {
+    transform: rotate(-24deg);
+  }
+  to {
+    transform: rotate(24deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .watch--live .watch__seconds,
+  .watch--live .watch__balance {
+    animation: none;
+  }
+}

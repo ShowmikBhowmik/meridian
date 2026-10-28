@@ -1,0 +1,140 @@
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 640px;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  padding: 0 var(--gutter);
+  isolation: isolate;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 28vh;
+  background: linear-gradient(to bottom, rgba(10, 12, 16, 0), var(--ground));
+  pointer-events: none;
+  z-index: 3;
+}
+
+.hero__wordmark {
+  position: absolute;
+  left: 50%;
+  top: 27vh;
+  transform: translate(-50%, -50%);
+  font-size: clamp(5.5rem, 17.5vw, 21rem);
+  line-height: 0.82;
+  letter-spacing: -0.035em;
+  font-variation-settings: 'opsz' 96;
+  font-weight: 400;
+  color: var(--bone);
+  white-space: nowrap;
+  z-index: 1;
+  text-wrap: none;
+}
+
+.hero__stage {
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+  height: min(82vh, 760px);
+  aspect-ratio: 400 / 600;
+  z-index: 2;
+  filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
+}
+
+.hero__watch {
+  width: 100%;
+  height: 100%;
+}
+
+.hero__line,
+.hero__cue {
+  position: absolute;
+  bottom: 36px;
+  z-index: 4;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  color: var(--bone-2);
+}
+
+.hero__line {
+  left: var(--gutter);
+  max-width: 52ch;
+}
+
+.hero__line span {
+  color: var(--bone-3);
+  margin: 0 0.4em;
+}
+
+.hero__cue {
+  right: var(--gutter);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--lume);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  font-weight: 500;
+}
+
+.hero__cue-line {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, var(--lume), transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__cue-line::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent, var(--ground));
+  animation: cue-drop 2.4s var(--ease-in-out) infinite;
+}
+
+@keyframes cue-drop {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(200%);
+  }
+}
+
+@media (max-width: 899px) {
+  .hero {
+    min-height: 560px;
+  }
+  .hero__wordmark {
+    top: 21vh;
+    font-size: clamp(4.4rem, 19vw, 7rem);
+  }
+  .hero__stage {
+    top: 60%;
+    height: min(56vh, 520px);
+  }
+  .hero__line {
+    bottom: 104px;
+    max-width: 30ch;
+    font-size: 0.75rem;
+  }
+  .hero__cue {
+    left: var(--gutter);
+    right: auto;
+    bottom: 40px;
+    flex-direction: row-reverse;
+  }
+  .hero__cue-line {
+    height: 36px;
+  }
+}
