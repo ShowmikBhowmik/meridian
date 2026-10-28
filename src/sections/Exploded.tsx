@@ -112,7 +112,8 @@ export function Exploded() {
             })
             // 2. labels follow their part's height, ordered by where the part actually is, never overlapping
             const order = [...layerIdx].sort((a, b) => pts[a].y - pts[b].y)
-            const minGap = 50
+            // a leader is level with its part wherever the parts leave room; level lines never cross
+            const minGap = 44
             const want = order.map((i) => pts[i].y)
             for (let k = 1; k < want.length; k++) want[k] = Math.max(want[k], want[k - 1] + minGap)
             // keep the block centred on the parts, then inside the viewport
@@ -131,8 +132,7 @@ export function Exploded() {
               const g = lineEls[i]
               const path = g.querySelector('path')!
               const dot = g.querySelector('circle')!
-              const kx = lx - 28
-              path.setAttribute('d', `M${lx} ${ly} H${kx} L${pts[i].x} ${pts[i].y}`)
+              path.setAttribute('d', `M${lx} ${ly} L${pts[i].x} ${pts[i].y}`)
               dot.setAttribute('cx', String(pts[i].x))
               dot.setAttribute('cy', String(pts[i].y))
             })
