@@ -21,9 +21,11 @@
 
 .hero__wordmark {
   position: absolute;
-  left: 50%;
-  top: 27vh;
-  transform: translate(-50%, -50%);
+  left: 0;
+  right: 0;
+  text-align: center;
+  /* centre line at 27vh; the line box is 0.82em tall */
+  top: calc(27vh - 0.41em);
   font-size: clamp(5.5rem, 17.5vw, 21rem);
   line-height: 0.82;
   letter-spacing: -0.035em;
@@ -41,12 +43,15 @@
 }
 
 .hero__stage {
+  --stage-h: min(82vh, 760px);
   position: absolute;
-  left: 50%;
-  top: 68%;
-  transform: translate(-50%, -50%);
-  height: min(82vh, 760px);
-  aspect-ratio: 400 / 600;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  /* centre at 68% of the viewport; no transform so GSAP owns transform alone */
+  top: calc(68% - var(--stage-h) / 2);
+  height: var(--stage-h);
+  width: calc(var(--stage-h) * 2 / 3);
   z-index: 2;
   filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.7));
 }
@@ -121,12 +126,12 @@
     min-height: 560px;
   }
   .hero__wordmark {
-    top: 21vh;
+    top: calc(21vh - 0.41em);
     font-size: clamp(4.4rem, 19vw, 7rem);
   }
   .hero__stage {
-    top: 60%;
-    height: min(56vh, 520px);
+    --stage-h: min(56vh, 520px);
+    top: calc(60% - var(--stage-h) / 2);
   }
   .hero__line {
     bottom: 104px;
