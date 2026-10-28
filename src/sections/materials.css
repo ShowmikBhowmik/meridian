@@ -1,7 +1,7 @@
 .materials {
   --mx: 50%;
   --my: 50%;
-  --spot: 300px;
+  --spot: 0px;
   position: relative;
   padding: clamp(96px, 14vh, 180px) var(--gutter);
   cursor: none;
@@ -27,6 +27,11 @@
   transition: opacity 0.4s var(--ease-out);
   pointer-events: none;
   z-index: 5;
+}
+
+.materials--lit,
+.materials--auto {
+  --spot: 300px;
 }
 
 .materials--lit::before,
@@ -98,19 +103,12 @@
   transition: filter 0.8s var(--ease-out);
 }
 
-.material__base h3,
 .material__copy h3 {
   font-size: clamp(1.25rem, 1.8vw, 1.75rem);
   letter-spacing: -0.01em;
   font-variation-settings: 'opsz' 48;
-}
-
-.material__base h3 {
-  position: absolute;
-  left: 22px;
-  right: 22px;
-  bottom: 18px;
   color: var(--bone-2);
+  transition: color 0.5s var(--ease-out);
 }
 
 .material__reveal {
@@ -122,18 +120,34 @@
   filter: saturate(1.05) contrast(1.02);
 }
 
+/* photographs toned to the object they stand for */
+.material--dark .material__reveal img {
+  filter: saturate(0.3) brightness(0.55) contrast(1.2);
+}
+
+.material--steel .material__reveal img {
+  filter: saturate(0.15) brightness(0.95) contrast(1.05);
+}
+
+/* copy sits above both photo layers and never under the mask */
 .material__copy {
   position: absolute;
   inset: auto 0 0 0;
-  padding: 40px 22px 18px;
-  background: linear-gradient(to top, rgba(10, 12, 16, 0.94), rgba(10, 12, 16, 0));
+  padding: 48px 22px 18px;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  z-index: 2;
 }
 
-.material__copy h3 {
-  color: var(--bone);
+.material__copy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 12, 16, 0.94), rgba(10, 12, 16, 0));
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out);
+  z-index: -1;
 }
 
 .material__copy p {
@@ -141,6 +155,22 @@
   font-size: 0.9375rem;
   line-height: 1.5;
   max-width: 48ch;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.5s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.material.is-lit .material__copy h3,
+.materials--auto .material__copy h3 {
+  color: var(--bone);
+}
+
+.material.is-lit .material__copy::before,
+.material.is-lit .material__copy p,
+.materials--auto .material__copy::before,
+.materials--auto .material__copy p {
+  opacity: 1;
+  transform: none;
 }
 
 

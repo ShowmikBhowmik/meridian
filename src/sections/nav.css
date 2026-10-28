@@ -8,13 +8,18 @@
   padding: 18px var(--gutter);
   color: var(--bone);
   pointer-events: none;
+  transition: transform 0.6s var(--ease-out);
+}
+
+.nav--hidden {
+  transform: translateY(-110%);
 }
 
 .nav::before {
   content: '';
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(10, 12, 16, 0.92), rgba(10, 12, 16, 0));
+  inset: 0 0 -64px 0;
+  background: linear-gradient(to bottom, rgba(10, 12, 16, 0.96) 0%, rgba(10, 12, 16, 0.8) 45%, rgba(10, 12, 16, 0));
   opacity: 0;
   transition: opacity 0.6s var(--ease-out);
   pointer-events: none;

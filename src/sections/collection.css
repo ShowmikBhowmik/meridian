@@ -126,6 +126,7 @@
     width: auto;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    scroll-padding-inline: var(--gutter);
     gap: 20px;
     padding: 0 var(--gutter) 24px;
     -webkit-overflow-scrolling: touch;

@@ -19,7 +19,7 @@ OWN-WORLD: Ground is graphite night (#0A0C10) with raised surfaces at #121519; t
 
 STORY: A watch turns slowly in the dark under a wordmark the width of the screen. Scrolling pulls it apart into ten named components and closes it again. The collection slides past sideways. The calibre's numbers count themselves up. A spotlight under the cursor reveals the materials. The page ends with one invitation.
 
-FIRST VIEWPORT: Full-bleed graphite. Hairline nav at top: wordmark small left, three links centre, "Private viewing" right. "Meridian" in Bodoni at ~17vw spans the width, baseline near 42vh. The assembled watch (SVG, ~72vh tall) sits centred and overlaps the wordmark's lower half, rotating once per 90s, seconds hand sweeping. Bottom-left: "Calibre M-01 · 72-hour reserve"; bottom-right: "Scroll to disassemble" with a thin vertical scroll line. Primary action on this surface is the scroll itself.
+FIRST VIEWPORT: Full-bleed graphite. Hairline nav at top: wordmark small left, four chapter links centre, "Private viewing" right. "Meridian" in Bodoni at ~17vw spans the width, baseline near 42vh. The assembled watch (SVG, ~72vh tall) sits centred and overlaps the wordmark's lower half, rotating once per 90s, seconds hand sweeping. Bottom-left: "Calibre M-01 · 72-hour reserve"; bottom-right: "Scroll to disassemble" with a thin vertical scroll line. Primary action on this surface is the scroll itself.
 
 FORM: Brief-pinned exploded-object page (user-supplied; not from the ranked list). seed:f5fd897bf7bd9e13. Signature interaction: a pinned GSAP timeline, scrubbed, separating ten SVG layers in perspective with leader-line labels drawing in, then reassembling. Motion grammar: expo.out, scrub-bound, continuous hero rotation, no repeated section entrances.
 

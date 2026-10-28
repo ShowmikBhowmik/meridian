@@ -5,7 +5,7 @@ import './materials.css'
 
 const BASE = import.meta.env.BASE_URL
 
-const MATERIALS = [
+const MATERIALS: { key: string; name: string; text: string; img: string; span: string; tone?: 'dark' | 'steel' }[] = [
   {
     key: 'titanium',
     name: 'Grade 5 titanium',
@@ -26,6 +26,7 @@ const MATERIALS = [
     text: 'Bevelled bridges, polished screw heads, Côtes de Genève laid by hand. Finished where you will see it and where you will not.',
     img: `${BASE}img/calibre.webp`,
     span: 'ca',
+    tone: 'steel',
   },
   {
     key: 'alligator',
@@ -33,6 +34,7 @@ const MATERIALS = [
     text: 'Cut from the belly so the scales run straight. Lined in calf, stitched with waxed linen, fitted to a titanium pin buckle.',
     img: `${BASE}img/alligator.webp`,
     span: 'al',
+    tone: 'dark',
   },
   {
     key: 'components',
@@ -63,8 +65,13 @@ export function Materials() {
       const host = el.getBoundingClientRect()
       for (const tile of tiles) {
         const r = tile.getBoundingClientRect()
-        tile.style.setProperty('--mx', `${pos.x - (r.left - host.left)}px`)
-        tile.style.setProperty('--my', `${pos.y - (r.top - host.top)}px`)
+        const lx = pos.x - (r.left - host.left)
+        const ly = pos.y - (r.top - host.top)
+        tile.style.setProperty('--mx', `${lx}px`)
+        tile.style.setProperty('--my', `${ly}px`)
+        // the tile under the lamp (with a little reach past its edge) shows its copy in full
+        const reach = 40
+        tile.classList.toggle('is-lit', lx > -reach && ly > -reach && lx < r.width + reach && ly < r.height + reach)
       }
     }
 
@@ -119,19 +126,17 @@ export function Materials() {
       </div>
       <div className="materials__grid">
         {MATERIALS.map((m) => (
-          <article className={`material material--${m.span}`} key={m.key}>
-            <div className="material__base">
+          <article className={`material material--${m.span} ${'tone' in m ? `material--${m.tone}` : ''}`} key={m.key}>
+            <div className="material__base" aria-hidden="true">
               <img src={m.img} alt="" loading="lazy" decoding="async" />
-              <h3 className="serif">{m.name}</h3>
             </div>
             <div className="material__reveal" aria-hidden="true">
               <img src={m.img} alt="" loading="lazy" decoding="async" />
-              <div className="material__copy">
-                <p>{m.text}</p>
-                <h3 className="serif">{m.name}</h3>
-              </div>
             </div>
-            <p className="sr-only">{m.text}</p>
+            <div className="material__copy">
+              <p>{m.text}</p>
+              <h3 className="serif">{m.name}</h3>
+            </div>
           </article>
         ))}
       </div>

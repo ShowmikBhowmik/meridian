@@ -53,8 +53,8 @@ export function Exploded() {
         },
         (ctx) => {
           const { desktop } = ctx.conditions as { desktop: boolean }
-          const gap = desktop ? Math.min(window.innerHeight * 0.075, 64) : Math.min(window.innerHeight * 0.052, 38)
-          const tiltX = desktop ? 56 : 50
+          const gap = desktop ? Math.min(window.innerHeight * 0.075, 64) : Math.min(window.innerHeight * 0.048, 40)
+          const tiltX = desktop ? 56 : 42
           const tiltZ = desktop ? -16 : 0
 
           const tl = gsap.timeline({
@@ -72,7 +72,7 @@ export function Exploded() {
           })
 
           // 0 → 0.25: tilt into perspective
-          tl.to(rig.current, { rotateX: tiltX, rotateZ: tiltZ, scale: desktop ? 0.92 : 0.84, duration: 0.25 }, 0)
+          tl.to(rig.current, { rotateX: tiltX, rotateZ: tiltZ, scale: desktop ? 0.92 : 0.96, duration: 0.25 }, 0)
           // 0.1 → 0.55: spread along z, bottom layers away, top layers towards the viewer
           tl.to(
             layers,
@@ -110,8 +110,8 @@ export function Exploded() {
               const [ax, ay] = ANCHORS[layer.dataset.part!]
               return { x: r.left + (r.width * ax) / 400 - host.left, y: r.top + (r.height * ay) / 600 - host.top }
             })
-            // 2. labels follow their part's height, top layer first, never overlapping
-            const order = [...layerIdx].reverse() // crystal … strap
+            // 2. labels follow their part's height, ordered by where the part actually is, never overlapping
+            const order = [...layerIdx].sort((a, b) => pts[a].y - pts[b].y)
             const minGap = 50
             const want = order.map((i) => pts[i].y)
             for (let k = 1; k < want.length; k++) want[k] = Math.max(want[k], want[k - 1] + minGap)
@@ -123,7 +123,7 @@ export function Exploded() {
             shift = Math.max(shift, 90 - want[0])
             for (let k = 0; k < want.length; k++) want[k] += shift
             order.forEach((i, k) => {
-              const el = labelEls[k]
+              const el = labelEls[n - 1 - i]
               const h = el.offsetHeight
               gsap.set(el, { y: want[k] - h / 2 - (column.top - host.top) })
               const lx = column.left - host.left + 6

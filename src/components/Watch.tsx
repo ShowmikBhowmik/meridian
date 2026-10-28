@@ -83,6 +83,43 @@ function spiral(cx: number, cy: number, turns: number, a: number, b: number): st
 
 const HAIRSPRING = spiral(150, 330, 6, 3, 0.75)
 
+function mulberry(seed: number) {
+  let a = seed
+  return () => {
+    a |= 0
+    a = (a + 0x6d2b79f5) | 0
+    let t = Math.imul(a ^ (a >>> 15), 1 | a)
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
+/**
+ * Alligator belly scales: rectangular, irregular in width, rows narrowing
+ * toward the strap tip. Deterministic per seed so hydration never flickers.
+ */
+function scaleField(x0: number, x1: number, y0: number, y1: number, tipAtEnd: boolean, seed: number) {
+  const rnd = mulberry(seed)
+  const out: { x: number; y: number; w: number; h: number }[] = []
+  let y = y0
+  while (y < y1) {
+    const f = (y - y0) / (y1 - y0)
+    const toward = tipAtEnd ? f : 1 - f
+    const h = 14 - 5 * toward + (rnd() - 0.5) * 1.2
+    let x = x0 - rnd() * 16
+    while (x < x1) {
+      const w = 17 + rnd() * 12 - 5 * toward
+      out.push({ x, y, w, h })
+      x += w
+    }
+    y += h
+  }
+  return out
+}
+
+const SCALES_TOP = scaleField(140, 262, -6, 172, false, 11)
+const SCALES_BOTTOM = scaleField(140, 262, 428, 606, true, 23)
+
 function toothed(cx: number, cy: number, r: number, teeth: number, width = 3) {
   const circ = 2 * Math.PI * r
   const seg = circ / teeth
@@ -107,26 +144,44 @@ function Strap({ v, uid }: LayerProps) {
   return (
     <>
       <defs>
-        <pattern id={pat} width="22" height="16" patternUnits="userSpaceOnUse" patternTransform="rotate(0)">
-          <rect x="1" y="1" width="20" height="14" rx="6" fill="rgba(255,255,255,0.045)" />
-          <rect x="1.5" y="1.5" width="19" height="13" rx="6" fill="none" stroke="rgba(0,0,0,0.35)" strokeWidth="1" />
-        </pattern>
+        <clipPath id={`${pat}-top`}>
+          <path d="M146 0 H254 L258 150 Q258 170 238 170 H162 Q142 170 142 150 Z" />
+        </clipPath>
+        <clipPath id={`${pat}-bottom`}>
+          <path d="M142 450 Q142 430 162 430 H238 Q258 430 258 450 L254 600 H146 Z" />
+        </clipPath>
         <linearGradient id={`${uid}-strapshade`} x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stopColor="rgba(0,0,0,0.55)" />
-          <stop offset="0.5" stopColor="rgba(255,255,255,0.05)" />
-          <stop offset="1" stopColor="rgba(0,0,0,0.55)" />
+          <stop offset="0" stopColor="rgba(0,0,0,0.6)" />
+          <stop offset="0.42" stopColor="rgba(255,255,255,0.07)" />
+          <stop offset="0.6" stopColor="rgba(255,255,255,0.03)" />
+          <stop offset="1" stopColor="rgba(0,0,0,0.6)" />
+        </linearGradient>
+        <linearGradient id={`${uid}-sheen`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="rgba(255,255,255,0.0)" />
+          <stop offset="0.5" stopColor="rgba(255,255,255,0.09)" />
+          <stop offset="1" stopColor="rgba(255,255,255,0.0)" />
         </linearGradient>
       </defs>
       {/* top strap */}
       <path d="M146 0 H254 L258 150 Q258 170 238 170 H162 Q142 170 142 150 Z" fill={v.strap} />
-      <path d="M146 0 H254 L258 150 Q258 170 238 170 H162 Q142 170 142 150 Z" fill={`url(#${pat})`} />
+      <g clipPath={`url(#${pat}-top)`}>
+        {SCALES_TOP.map((r, i) => (
+          <rect key={i} x={r.x + 0.8} y={r.y + 0.8} width={r.w - 1.6} height={r.h - 1.6} rx="3.5" fill="rgba(255,255,255,0.045)" stroke="rgba(0,0,0,0.3)" strokeWidth="1.4" />
+        ))}
+        <path d="M146 0 H254 L258 150 Q258 170 238 170 H162 Q142 170 142 150 Z" fill={`url(#${uid}-sheen)`} />
+      </g>
       <path d="M146 0 H254 L258 150 Q258 170 238 170 H162 Q142 170 142 150 Z" fill={`url(#${uid}-strapshade)`} />
       <path d="M154 4 L156 152 M246 4 L244 152" stroke={v.stitch} strokeWidth="1.2" strokeDasharray="4 5" fill="none" opacity="0.9" />
       {/* keeper */}
       <rect x="140" y="56" width="120" height="14" rx="3" fill={v.strap} stroke="rgba(0,0,0,0.5)" />
       {/* bottom strap */}
       <path d="M142 450 Q142 430 162 430 H238 Q258 430 258 450 L254 600 H146 Z" fill={v.strap} />
-      <path d="M142 450 Q142 430 162 430 H238 Q258 430 258 450 L254 600 H146 Z" fill={`url(#${pat})`} />
+      <g clipPath={`url(#${pat}-bottom)`}>
+        {SCALES_BOTTOM.map((r, i) => (
+          <rect key={i} x={r.x + 0.8} y={r.y + 0.8} width={r.w - 1.6} height={r.h - 1.6} rx="3.5" fill="rgba(255,255,255,0.045)" stroke="rgba(0,0,0,0.3)" strokeWidth="1.4" />
+        ))}
+        <path d="M142 450 Q142 430 162 430 H238 Q258 430 258 450 L254 600 H146 Z" fill={`url(#${uid}-sheen)`} />
+      </g>
       <path d="M142 450 Q142 430 162 430 H238 Q258 430 258 450 L254 600 H146 Z" fill={`url(#${uid}-strapshade)`} />
       <path d="M156 448 L154 596 M244 448 L246 596" stroke={v.stitch} strokeWidth="1.2" strokeDasharray="4 5" fill="none" opacity="0.9" />
       {/* strap holes */}
@@ -391,7 +446,8 @@ function Dial({ v, uid }: LayerProps) {
         fontSize="17"
         letterSpacing="4"
         fill={v.ink}
-        style={{ fontVariationSettings: '"opsz" 48' }}
+        fontWeight="500"
+        style={{ fontVariationSettings: '"opsz" 11, "wght" 500' }}
       >
         MERIDIAN
       </text>

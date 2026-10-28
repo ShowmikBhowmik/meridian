@@ -9,9 +9,13 @@ export function Nav() {
   useEffect(() => {
     const el = ref.current!
     const st = ScrollTrigger.create({
-      start: 'top -80',
+      start: 0,
+      end: 'max',
       onUpdate: (self) => {
-        el.classList.toggle('nav--scrolled', self.scroll() > 80)
+        const y = self.scroll()
+        el.classList.toggle('nav--scrolled', y > 80)
+        // step aside while the visitor reads downward; return on the way up
+        el.classList.toggle('nav--hidden', self.direction === 1 && y > 160)
       },
     })
     return () => st.kill()
