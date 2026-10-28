@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://showmikbhowmik.github.io/meridian/sitemap.xml
